@@ -1,0 +1,140 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.2rem;
+  background-color: antiquewhite;
+  background-image: radial-gradient(whitesmoke, lightgreen);
+  display: flex;
+  flex-direction: column;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+header,
+footer {
+  position: sticky;
+  text-align: center;
+  background-color: rgb(191, 154, 225);
+}
+header {
+  top: 0;
+}
+footer {
+  bottom: 0;
+  padding: 20px;
+}
+header h1 {
+  padding: 20px;
+}
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-bottom: 2px solid;
+}
+header nav a {
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  color: black;
+  text-align: center;
+}
+header nav a:hover,
+a:focus {
+  opacity: 0.5;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.card {
+  scroll-margin-top: 20rem;
+  width: min(100%, 400px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid;
+  padding: 10px;
+  border-radius: 15px;
+}
+.card figure {
+  display: flex;
+  flex-direction: column;
+}
+.card figcaption {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  margin: 1rem;
+}
+.card img {
+  border: 5px double;
+  border-radius: 50%;
+}
+
+/* small 576px*/
+@media screen and (min-width: 576px) {
+  main {
+    justify-content: center;
+    flex-flow: row wrap;
+  }
+  .card {
+    width: min(100%, 450px);
+  }
+  .card:last-child {
+    order: -1;
+  }
+}
+
+/* medium 768px */
+@media screen and (min-width: 768px) {
+  header nav {
+    display: none;
+  }
+  .card {
+    width: min(100%, 325px);
+  }
+}
+/* XL 1200px */
+@media screen and (min-width: 1200px) {
+  .card {
+    width: min(100%, 300px);
+  }
+}
+
+@media screen and (max-height: 425px) and (min-aspect-ratio: 5/4) {
+  nav {
+    display: none;
+  }
+  main {
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+  }
+  .card figure {
+    flex-flow: column-reverse;
+  }
+}
+.card:target {
+  border: 5px solid rgb(91, 91, 223);
+}
+.card figcaption::first-letter {
+  font-size: 2rem;
+}
